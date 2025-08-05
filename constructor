@@ -1,0 +1,79 @@
+# default constructor 
+class Box {
+    double w, h, d;
+    Box() {
+        System.out.println("This is constructor");
+        w = 10;
+        h = 10;
+        d = 10;
+        System.out.println("The value of w, h, d are " + w + " " + h + " " + d);
+    }
+    public static void main(String[] args) {
+        Box myBox = new Box(); 
+    }
+}
+
+# output
+This is constructor
+The value of w, h, d are 10.0 10.0 10.0
+
+  # paramiterized constructor
+  class Box {
+    double w, h, d;
+    Box(double a, double b, double c) {
+        w = a;
+        h = b;
+        d = c;
+        System.out.println("The values of w, h, and d are: " + w + ", " + h + ", " + d);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Box myBox = new Box(5, 10, 15); 
+    }
+}
+# output 
+The values of w, h, and d are: 5.0, 10.0, 15.0
+
+#overloadding constructor
+class Box {
+    double w, h, d;
+
+    // Default constructor
+    Box() {
+        w = h = d = 0;
+        System.out.println("Default constructor called.");
+        System.out.println("The values of w, h, and d are: " + w + ", " + h + ", " + d);
+    }
+
+    // Parameterized constructor
+    Box(double a, double b, double c) {
+        w = a;
+        h = b;
+        d = c;
+        System.out.println("Parameterized constructor called.");
+        System.out.println("The values of w, h, and d are: " + w + ", " + h + ", " + d);
+    }
+    // Constructor for cube
+    Box(double side) {
+        w = h = d = side;
+        System.out.println("overloadding constructor called.");
+        System.out.println("The values of w, h, and d are: " + w + ", " + h + ", " + d);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Box box1 = new Box();             // Default constructor
+        Box box2 = new Box(5, 10, 15);    // Parameterized constructor
+        Box box3 = new Box(7);      // Cube constructor
+    }
+}
+
+#output
+Default constructor called.
+The values of w, h, and d are: 0.0, 0.0, 0.0
+Parameterized constructor called.
+The values of w, h, and d are: 5.0, 10.0, 15.0
+overloadding constructor called.
+The values of w, h, and d are: 7.0, 7.0, 7.0
+
