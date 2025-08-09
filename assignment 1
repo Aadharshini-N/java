@@ -1,0 +1,83 @@
+// Author.java
+class Author {
+    private String name;
+    private String email;
+
+    public Author(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
+
+    public String getName() { return name; }
+    public String getEmail() { return email; }
+
+    public void displayInfo() {
+        System.out.println("Author: " + name + " | Email: " + email);
+    }
+}
+
+// Book.java
+class Book {
+    private String title;
+    private Author author;
+    private double price;
+
+    public Book(String title, Author author, double price) {
+        this.title = title;
+        this.author = author;
+        this.price = price;
+    }
+
+    public String getTitle() { return title; }
+    public Author getAuthor() { return author; }
+    public double getPrice() { return price; }
+
+    public void displayInfo() {
+        System.out.println("Book: " + title + " | Price: $" + price);
+        author.displayInfo();
+    }
+}
+
+// Member.java
+class Member {
+    private String name;
+    private int memberId;
+
+    public Member(String name, int memberId) {
+        this.name = name;
+        this.memberId = memberId;
+    }
+
+    public void displayInfo() {
+        System.out.println("Member Name: " + name + " | ID: " + memberId);
+    }
+}
+
+// Main.java
+public class Main {
+    public static void main(String[] args) {
+        // Create an author
+        Author author1 = new Author("J.K. Rowling", "jk@hogwarts.com");
+
+        // Create a book
+        Book book1 = new Book("Harry Potter", author1, 29.99);
+
+        // Create a member
+        Member member1 = new Member("Alice", 101);
+
+        // Display all details
+        System.out.println("=== Book Details ===");
+        book1.displayInfo();
+
+        System.out.println("\n=== Member Details ===");
+        member1.displayInfo();
+    }
+}
+
+# output
+=== Book Details ===
+Book: Harry Potter | Price: $29.99
+Author: J.K. Rowling | Email: jk@hogwarts.com
+
+=== Member Details ===
+Member Name: Alice | ID: 101
