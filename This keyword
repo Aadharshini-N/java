@@ -1,0 +1,17 @@
+class Abc {
+    int RegNo;
+    String Name;
+
+    Abc(int R, String N) {
+        this.RegNo = R;   // 'this' refers to the current object
+        this.Name = N;
+        System.out.println(RegNo + " " + Name);
+    }
+
+    public static void main(String[] args) {
+        Abc obj = new Abc(10, "RIT");
+    }
+}
+
+#ouput
+10 RIT
