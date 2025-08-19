@@ -81,3 +81,43 @@ Author: J.K. Rowling | Email: jk@hogwarts.com
 
 === Member Details ===
 Member Name: Alice | ID: 101
+
+
+
+class Course {
+    String courseName;
+    String students = ""; 
+    Course(String courseName) {
+        this.courseName = courseName;
+    }
+
+    void enrollStudent(String studentName) {
+        students = students + studentName + "\n";  
+    }
+
+    void listAllEnrolledStudents() {
+        if (students.isEmpty()) {
+            System.out.println("No students enrolled in " + courseName);
+        } else {
+            System.out.println("Students enrolled in " + courseName + ":");
+            System.out.print(students);
+        }
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Course course = new Course("Science");
+        course.enrollStudent("Alice");
+        course.enrollStudent("Bob");
+        course.enrollStudent("Charlie");
+
+        course.listAllEnrolledStudents();
+    }
+}
+
+
+#output
+Students enrolled in Science:
+Alice
+Bob
+Charlie
