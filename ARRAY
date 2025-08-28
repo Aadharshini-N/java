@@ -1,0 +1,88 @@
+Arrays in Java
+
+1. One-Dimensional Arrays
+
+class Testarray {
+    public static void main(String args[]) {
+        int a[] = new int[5]; // declaration & instantiation
+        a[0] = 10; // initialization
+        a[1] = 20;
+        a[2] = 70;
+        a[3] = 40;
+        a[4] = 50;
+
+        // Printing array
+        for(int i = 0; i < a.length; i++)
+            System.out.println(a[i]);
+    }
+}
+
+#output
+33
+3
+4
+5
+
+Example 2: Declaration + Instantiation + Initialization (together)
+
+class Testarray1 {
+    public static void main(String args[]) {
+        int a[] = {33, 3, 4, 5}; // declaration, instantiation, initialization
+
+        for(int i = 0; i < a.length; i++)
+            System.out.println(a[i]);
+    }
+}
+
+# output
+33
+3
+4
+5
+
+2. Passing Array to a Method
+class Testarray2 {
+    static void min(int arr[]) {
+        int min = arr[0];
+        for(int i = 1; i < arr.length; i++)
+            if(min > arr[i])
+                min = arr[i];
+        System.out.println(min);
+    }
+
+    public static void main(String args[]) {
+        int a[] = {33, 3, 4, 5};
+        min(a); // passing array to method
+    }
+}
+
+#output
+
+3
+
+3. Multidimensional Arrays
+class TwoDArray {
+    public static void main(String args[]) {
+        int twoD[][] = new int[4][5];
+        int k = 0;
+
+        // Storing values
+        for(int i = 0; i < 4; i++)
+            for(int j = 0; j < 5; j++)
+                twoD[i][j] = k++;
+
+        // Printing array
+        for(int i = 0; i < 4; i++) {
+            for(int j = 0; j < 5; j++)
+                System.out.print(twoD[i][j] + " ");
+            System.out.println();
+        }
+    }
+}
+#output
+0 1 2 3 4
+5 6 7 8 9
+10 11 12 13 14
+15 16 17 18 19
+
+
