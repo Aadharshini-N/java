@@ -1,0 +1,55 @@
+program 1:
+public class Test<T> {
+    T obj;  
+
+    Test(T obj) { 
+        this.obj = obj;
+    }
+
+    public T getObject() { 
+        return this.obj; 
+    }
+
+    public static void main(String[] args) {
+        Test<Integer> iObj = new Test<Integer>(15);
+        System.out.println(iObj.getObject());
+
+        Test<String> sObj = new Test<String>("GeeksForGeeks");
+        System.out.println(sObj.getObject());
+    }
+}
+
+#output
+15
+GeeksForGeeks
+
+program:2
+
+public class Test<T, U>
+{
+    T obj1;  // Object of type T
+    U obj2;  // Object of type U
+
+    Test(T obj1, U obj2)
+    {
+        this.obj1 = obj1;
+        this.obj2 = obj2;
+    }
+
+    public void print()
+    {
+        System.out.println(obj1);
+        System.out.println(obj2);
+    }
+    public static void main (String[] args)
+    {
+        Test <String, Integer> obj =
+            new Test<String, Integer>("GfG", 15);
+
+        obj.print();
+    }
+}
+
+#output
+GfG
+15
